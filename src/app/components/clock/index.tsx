@@ -9,7 +9,7 @@ const Clock = () => {
 
   // Function to get the current time
   const getCurrentTime = () => {
-    const now = new Date("2021-10-10T11:35:10");
+    const now = new Date();
 
     let hour = now.getHours() % 12,
       minute = Math.round(now.getMinutes() / 5) * 5;
