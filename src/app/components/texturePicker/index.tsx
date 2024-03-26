@@ -25,7 +25,7 @@ const TexturePicker = () => {
     { className: "bg-yellow-400", value: "yellow" },
   ];
 
-  const { setLedColor } = useContext(ClockContext);
+  const { ledColor, setLedColor } = useContext(ClockContext);
 
   return (
     <div className="flex justify-center p-3">
@@ -45,7 +45,7 @@ const TexturePicker = () => {
           <li
             key={value}
             onClick={() => setLedColor(value)}
-            className={`${className} w-8 h-8 rounded-full overflow-hidden hover:scale-110 transition-all duration-100 cursor-pointer hover:drop-shadow-xl`} 
+            className={`${className} ${ledColor === value ? `border-2 after:content-[''] after:absolute after:rounded-full after:top-0 after:bottom-0 after:left-0 after:right-0 after:justify-center after:items-center after:h-2 after:w-2 after:bg-black/30 after:m-auto` : ``} relative w-8 h-8 rounded-full overflow-hidden hover:scale-110 transition-transform duration-100 cursor-pointer hover:drop-shadow-xl`} 
           ></li>
         )}
       </ul>

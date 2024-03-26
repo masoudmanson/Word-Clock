@@ -7,8 +7,8 @@ import { ClockContext } from "./context";
 import { Suspense } from 'react';
 
 export default function Home() {
-  const [texture, setTexture] = useState("bg-stone-1");
-  const [ledColor, setLedColor] = useState("#fff");
+  const [texture, setTexture] = useState("bg-rust-1");
+  const [ledColor, setLedColor] = useState("white");
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-6">
