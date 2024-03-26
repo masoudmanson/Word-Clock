@@ -4,6 +4,7 @@ import { useState } from "react";
 import Clock from "./components/clock";
 import TexturePicker from "./components/texturePicker";
 import { ClockContext } from "./context";
+import { Suspense } from 'react';
 
 export default function Home() {
   const [texture, setTexture] = useState("bg-stone-1");

@@ -4,8 +4,23 @@ import { ClockContext } from "@/app/context";
 import { CornerLed } from "./styles"
 import { useCallback, useContext, useEffect, useState } from "react";
 
+const clockLayout = [
+  "ITLISASAMPM",
+  "APQUARTERDC",
+  "TWENTYXFIVE",
+  "HALFSTENFTO",
+  "PASTERUNINE",
+  "ONESIXTHREE",
+  "FOURFIVETWO",
+  "EIGHTELEVEN",
+  "SEVENTWELVE",
+  "TENSEOCLOCK",
+];
+
 const Clock = () => {
-  const [clockText, setClockText] = useState<(string | boolean)[][][]>();
+  const [clockText, setClockText] = useState<(string | boolean)[][][]>(clockLayout.map((row) =>
+    row.split("").map((char) => [char, false])
+  ));
 
   // Function to get the current time
   const getCurrentTime = () => {
@@ -16,7 +31,7 @@ const Clock = () => {
 
     if (minute === 60) {
       minute = 0;
-      hour = (hour + 1) % 12 ? (hour + 1) % 12 : 12;
+      hour = (hour + 1) % 12;
     }
 
     return {
@@ -28,19 +43,6 @@ const Clock = () => {
   // Function to update the clock display
   const updateClock = useCallback(() => {
     let { hour, minute } = getCurrentTime();
-
-    const clockLayout = [
-      "ITLISASAMPM",
-      "APQUARTERDC",
-      "TWENTYXFIVE",
-      "HALFSTENFTO",
-      "PASTERUNINE",
-      "ONESIXTHREE",
-      "FOURFIVETWO",
-      "EIGHTELEVEN",
-      "SEVENTWELVE",
-      "TENSEOCLOCK",
-    ];
 
     // Mapping words to their positions in the clock layout
     const wordPositions = new Map([
@@ -70,6 +72,7 @@ const Clock = () => {
     ]);
 
     const hourWords: { [index: number]: string } = {
+      0: "TWELVE",
       1: "ONE",
       2: "TWO",
       3: "THREE",
@@ -155,7 +158,7 @@ const Clock = () => {
 
   useEffect(() => {
     // Update the clock every second
-    const clockTimer = setInterval(updateClock, 1000);
+    const clockTimer = setInterval(updateClock, 3000);
 
     return () => {
       clearInterval(clockTimer);
