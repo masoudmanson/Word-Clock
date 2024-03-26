@@ -7,13 +7,17 @@ const TexturePicker = () => {
     { texture: "/bg/stone-1.jpg", alt: "Stone", value: "bg-stone-1" },
     { texture: "/bg/stone-2.jpg", alt: "Stone", value: "bg-stone-2" },
     { texture: "/bg/stone-3.jpg", alt: "Stone", value: "bg-stone-3" },
+    { texture: "/bg/stone-4.jpg", alt: "Stone", value: "bg-stone-4" },
     { texture: "/bg/wood-1.jpg", alt: "Wood", value: "bg-wood-1" },
     { texture: "/bg/wood-2.jpg", alt: "Wood", value: "bg-wood-2" },
     { texture: "/bg/fabric-1.jpg", alt: "Fabric", value: "bg-fabric-1" },
-    { texture: "/bg/fabric-2.jpg", alt: "Fabric", value: "bg-fabric-2" },
     { texture: "/bg/gold-1.jpg", alt: "Gold", value: "bg-gold-1" },
     { texture: "/bg/leather-1.jpg", alt: "Leather", value: "bg-leather-1" },
     { texture: "/bg/concrete-1.jpg", alt: "Concrete", value: "bg-concrete-1" },
+    { texture: "/bg/concrete-2.jpg", alt: "Concrete", value: "bg-concrete-2" },
+    { texture: "/bg/rust-1.jpg", alt: "Rust", value: "bg-rust-1" },
+    { texture: "/bg/rust-2.jpg", alt: "Rust", value: "bg-rust-2" },
+    { texture: "/bg/metal-1.jpg", alt: "Metal", value: "bg-metal-1" },
   ];
 
   const ledColors = [
@@ -25,7 +29,7 @@ const TexturePicker = () => {
 
   return (
     <div className="flex justify-center p-3">
-      <ul className="flex justify-center p-3 gap-2 border-r border-slate-700">
+      <ul className="grid grid-rows-3 grid-cols-5 md:grid-cols-7 md:grid-rows-2 justify-center p-3 gap-2 border-r border-slate-700">
         {textures.map(({ texture, alt, value }) =>
           <TextureItem 
             key={texture} 
@@ -36,7 +40,7 @@ const TexturePicker = () => {
         )}
       </ul>
 
-      <ul className="flex justify-center p-3 gap-2">
+      <ul className="grid grid-rows-3 grid-cols-1 md:grid-rows-2 justify-center p-3 gap-2">
         {ledColors.map(({ className, value }) =>
           <li
             key={value}
