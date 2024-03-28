@@ -43,7 +43,7 @@ All texture images used in this project have been downloaded from [Unsplash](htt
 
 ### Font
 
-The custom font used in this project is called "Word Clock," which was specially designed for this application. You can download the font from [here](https://github.com/masoudmanson/word-clock/blob/main/assets/WordClock-Regular.otf).
+The custom font used in this project is called "Word Clock," which was specially designed for this application. You can download the font from [here](https://github.com/masoudmanson/Word-Clock/blob/main/public/fonts/WordClock-Regular.otf).
 
 ### License
 
