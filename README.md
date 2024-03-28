@@ -20,6 +20,23 @@ Text-based Clock is a web application that displays the time in a unique and cre
   <img width="256" alt="Screenshot 2024-03-24 at 4 15 44 AM" src="https://github.com/masoudmanson/Word-Clock/assets/927990/76d35521-9d1f-4060-9dd1-5e5b99f7589e">
 </p>
 
+### Clock Grid
+
+The Clock Grid displays time in a matrix format, with each cell containing a word representing a specific time element. This layout offers a clear and intuitive way to read the time, forming the foundation of the Text-based Clock application's unique presentation.
+
+```
+I T L I S A S A M P M
+A P Q U A R T E R D C
+T W E N T Y X F I V E
+H A L F S T E N F T O
+P A S T E R U N I N E
+O N E S I X T H R E E
+F O U R F I V E T W O
+E I G H T E L E V E N
+S E V E N T W E L V E
+T E N S E O C L O C K
+```
+
 ### Images
 
 All texture images used in this project have been downloaded from [Unsplash](https://unsplash.com/).
