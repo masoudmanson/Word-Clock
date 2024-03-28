@@ -1,8 +1,8 @@
 import { createContext } from "react";
 
 export const ClockContext = createContext({
-  texture: "bg-stone-1",
+  texture: "bg-rust-1",
   setTexture: (texture: string) => {},
-  ledColor: "#fff",
+  ledColor: "white",
   setLedColor: (color: string) => {},
 });

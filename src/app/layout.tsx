@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Word Clock",
-  description: "A word clock built with Next.js and Tailwind CSS.",
+  description: "A word clock built with NextJs and Tailwind CSS.",
 };
 
 export default function RootLayout({
