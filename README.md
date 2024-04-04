@@ -1,6 +1,5 @@
 <p align="center">
-  
-  <img width="512" alt="Screenshot 2024-03-24 at 4 16 59 AM" src="https://github.com/masoudmanson/Word-Clock/assets/927990/e9f64d50-39bf-4a19-8885-da1c156cf4ab">
+  <img width="512" alt="Screenshot 2024-04-04 at 4 29 05 PM (3)" src="https://github.com/masoudmanson/Word-Clock/assets/927990/ab3c3457-9140-424b-97bd-ebbc94ac70dd">
 </p>
 <br/>
 
