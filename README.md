@@ -1,12 +1,12 @@
 <p align="center">
-  
-  <img width="512" alt="Screenshot 2024-03-24 at 4 16 59 AM" src="https://github.com/masoudmanson/Word-Clock/assets/927990/e9f64d50-39bf-4a19-8885-da1c156cf4ab">
+  <img width="512" alt="Screenshot 2024-04-04 at 4 29 05 PM (3)" src="https://github.com/masoudmanson/Word-Clock/assets/927990/ab3c3457-9140-424b-97bd-ebbc94ac70dd">
 </p>
 <br/>
 
 ## Word Clock 
 
-Text-based Clock is a web application that displays the time in a unique and creative way using words arranged in a matrix. It mimics the layout of a word clock, presenting time in a more visually appealing format.
+Text-based Clock is a web application that displays the time in a unique and creative way using words arranged in a matrix. It mimics the layout of a word clock, presenting time in a more visually appealing format. 
+
 
 ### Features
 
@@ -19,6 +19,12 @@ Text-based Clock is a web application that displays the time in a unique and cre
   <img width="256" alt="Screenshot 2024-03-24 at 4 14 10 AM" src="https://github.com/masoudmanson/Word-Clock/assets/927990/382b47be-4254-4a27-a20a-332ad6282b74">
   <img width="256" alt="Screenshot 2024-03-24 at 4 15 44 AM" src="https://github.com/masoudmanson/Word-Clock/assets/927990/76d35521-9d1f-4060-9dd1-5e5b99f7589e">
 </p>
+
+
+### Live Demo
+
+Check out the live demo [here](https://word-clock-swart.vercel.app/).
+
 
 ### Clock Grid
 
@@ -37,9 +43,11 @@ S E V E N T W E L V E
 T E N S E O C L O C K
 ```
 
+
 ### Images
 
 All texture images used in this project have been downloaded from [Unsplash](https://unsplash.com/).
+
 
 ### Font
 
