@@ -5,4 +5,6 @@ export const ClockContext = createContext({
   setTexture: (texture: string) => {},
   ledColor: "white",
   setLedColor: (color: string) => {},
+  showMenu: true,
+  setShowMenu: (show: boolean) => {},
 });

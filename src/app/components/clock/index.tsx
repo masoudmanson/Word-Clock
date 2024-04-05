@@ -3,6 +3,7 @@
 import { ClockContext } from "@/app/context";
 import { CornerLed } from "./styles"
 import { useCallback, useContext, useEffect, useState } from "react";
+import clsx from "clsx";
 
 const clockLayout = [
   "ITLISASAMPM",
@@ -174,7 +175,15 @@ const Clock = () => {
           clockText?.map(row => {
             return row.map(([char, highlight], index) => {
               return (
-                <span key={index} className={`md:text-3xl sm:text-xl font-word-clock ${highlight ? `${ledColor === "yellow" ? "text-yellow-100 text-shadow-clock-on-yellow" : "text-white text-shadow-clock-on-white"}` : "text-black/50 text-shadow-clock-off"}`}>{char}</span>
+                <span key={index} className={`
+                  ${clsx({
+                  "md:text-3xl sm:text-xl font-word-clock ": true,
+                  "text-yellow-100 text-shadow-clock-on-yellow": highlight && ledColor === "yellow",
+                  "text-white text-shadow-clock-on-white": highlight && ledColor === "white",
+                  "text-black/50 text-shadow-clock-off": !highlight
+                })}`}>
+                  {char}
+                </span>
               );
             })
           })
