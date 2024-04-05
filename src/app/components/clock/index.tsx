@@ -190,10 +190,10 @@ const Clock = () => {
         }
       </div>
       <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-between p-6">
-        <CornerLed className="top-6 left-6 animate-clock-top-left" />
-        <CornerLed className="top-6 right-6 animate-clock-top-right" />
-        <CornerLed className="bottom-6 right-6 animate-clock-bottom-right" />
-        <CornerLed className="bottom-6 left-6 animate-clock-bottom-left" />
+        <CornerLed className="top-6 left-6" />
+        <CornerLed className="top-6 right-6" />
+        <CornerLed className="bottom-6 right-6" />
+        <CornerLed className="bottom-6 left-6" />
       </div>
     </div>
   );
