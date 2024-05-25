@@ -6,7 +6,7 @@ import TexturePicker from "./components/texturePicker";
 import { ClockContext } from "./context";
 
 export default function Home() {
-  const [texture, setTexture] = useState("bg-rust-1");
+  const [texture, setTexture] = useState("/bg/rust-1.jpg");
   const [ledColor, setLedColor] = useState("white");
   const [showMenu, setShowMenu] = useState(true);
 

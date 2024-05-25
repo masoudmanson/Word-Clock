@@ -4,19 +4,8 @@ import { ClockContext } from "@/app/context";
 import { CornerLed } from "./styles"
 import { useCallback, useContext, useEffect, useState } from "react";
 import clsx from "clsx";
-
-const clockLayout = [
-  "ITLISASAMPM",
-  "APQUARTERDC",
-  "TWENTYXFIVE",
-  "HALFSTENFTO",
-  "PASTERUNINE",
-  "ONESIXTHREE",
-  "FOURFIVETWO",
-  "EIGHTELEVEN",
-  "SEVENTWELVE",
-  "TENSEOCLOCK",
-];
+import ClockWrapper from "../clockWrapper";
+import { clockLayout } from "@/app/util/clockLayout";
 
 const Clock = () => {
   const [clockText, setClockText] = useState<(string | boolean)[][][]>(clockLayout.map((row) =>
@@ -170,26 +159,28 @@ const Clock = () => {
 
   return (
     <div className="relative m-auto">
-      <div className={`${texture} grid grid-cols-11 justify-items-center items-center md:gap-x-4 gap-x-3 md:gap-y-1 gap-y-0 bg-cover md:p-20 sm:p-12 p-10 shadow-clock`}>
-        {
-          clockText?.map(row => {
-            return row.map(([char, highlight], index) => {
-              return (
-                <span key={index} className={`
-                  ${clsx({
-                  "md:text-3xl sm:text-xl font-word-clock ": true,
-                  "text-yellow-100 text-shadow-clock-on-yellow": highlight && ledColor === "yellow",
-                  "text-white text-shadow-clock-on-white": highlight && ledColor === "white",
-                  "text-black/50 text-shadow-clock-off": !highlight
-                })}`}>
-                  {char}
-                </span>
-              );
+      <ClockWrapper img={texture}>
+        <>
+          {
+            clockText?.map(row => {
+              return row.map(([char, highlight], index) => {
+                return (
+                  <span key={index} className={`
+                    ${clsx({
+                    "md:text-3xl sm:text-xl font-word-clock ": true,
+                    "text-yellow-100 text-shadow-clock-on-yellow": highlight && ledColor === "yellow",
+                    "text-white text-shadow-clock-on-white": highlight && ledColor === "white",
+                    "text-black/50 text-shadow-clock-off": !highlight
+                  })}`}>
+                    {char}
+                  </span>
+                );
+              })
             })
-          })
-        }
-      </div>
-      <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-between p-6">
+          }
+        </>
+      </ClockWrapper>
+      <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-between p-6 z-10">
         <CornerLed className="top-6 left-6" />
         <CornerLed className="top-6 right-6" />
         <CornerLed className="bottom-6 right-6" />

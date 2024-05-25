@@ -44,7 +44,7 @@ const TexturePicker = () => {
               key={texture}
               texture={texture}
               alt={alt}
-              value={value}
+              value={texture}
             />
           )}
         </ul>

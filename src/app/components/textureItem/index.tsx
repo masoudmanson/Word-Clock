@@ -3,7 +3,7 @@
 import { ClockContext } from '@/app/context';
 import clsx from 'clsx';
 import Image from 'next/image';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 interface TextureItemProps {
   texture: string;
@@ -13,6 +13,11 @@ interface TextureItemProps {
 
 const TextureItem = ({ texture: textureImage, alt, value }: TextureItemProps) => {
   const { texture, setTexture } = useContext(ClockContext);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
 
   const isActive = texture === value;
 
@@ -22,11 +27,23 @@ const TextureItem = ({ texture: textureImage, alt, value }: TextureItemProps) =>
   });
 
   return (
-    <li 
+    <li
       className={TextureItemClass}
       onClick={() => setTexture(value)}
     >
-      <Image src={textureImage} alt={alt} width={32} height={32} />
+      {isLoading && (
+        <div className="animate-pulse bg-gray-800 w-full h-full"></div>
+      )}
+      <Image
+        src={textureImage}
+        alt={alt}
+        width={32}
+        height={32}
+        loading="lazy"
+        className={`rounded-full ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+        style={{ transition: 'opacity 0.3s ease' }}
+        onLoad={handleImageLoad} 
+      />
     </li>
   );
 };
