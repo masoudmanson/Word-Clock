@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import ClockSkeleton from "../clockSkeleton";
 import clsx from "clsx";
 
 type Props = {
