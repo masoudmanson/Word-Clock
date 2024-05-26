@@ -13,12 +13,6 @@ interface TextureItemProps {
 
 const TextureItem = ({ texture: textureImage, alt, value }: TextureItemProps) => {
   const { texture, setTexture } = useContext(ClockContext);
-  const [isLoading, setIsLoading] = useState(true);
-
-  const handleImageLoad = () => {
-    setIsLoading(false);
-  };
-
   const isActive = texture === value;
 
   const TextureItemClass = clsx({
@@ -31,18 +25,13 @@ const TextureItem = ({ texture: textureImage, alt, value }: TextureItemProps) =>
       className={TextureItemClass}
       onClick={() => setTexture(value)}
     >
-      {isLoading && (
-        <div className="animate-pulse bg-gray-800 w-full h-full"></div>
-      )}
       <Image
         src={textureImage}
         alt={alt}
         width={32}
         height={32}
         loading="lazy"
-        className={`rounded-full ${isLoading ? 'opacity-0' : 'opacity-100'}`}
-        style={{ transition: 'opacity 0.3s ease' }}
-        onLoad={handleImageLoad} 
+        className={`rounded-full bg-zinc-800`}
       />
     </li>
   );

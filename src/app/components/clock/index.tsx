@@ -167,7 +167,7 @@ const Clock = () => {
                 return (
                   <span key={index} className={`
                     ${clsx({
-                    "md:text-3xl sm:text-xl font-word-clock ": true,
+                    "md:text-3xl sm:text-xl font-word-clock z-10": true,
                     "text-yellow-100 text-shadow-clock-on-yellow": highlight && ledColor === "yellow",
                     "text-white text-shadow-clock-on-white": highlight && ledColor === "white",
                     "text-black/50 text-shadow-clock-off": !highlight
