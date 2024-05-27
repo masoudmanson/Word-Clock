@@ -1,4 +1,6 @@
-import { useContext, useState } from "react";
+"use client";
+
+import { useState } from "react";
 import TextureItem from "../textureItem";
 import { ChevronDown, ChevronUp } from "../icons";
 import clsx from "clsx";
@@ -6,7 +8,7 @@ import { Textures } from "@/app/util/textures";
 import LedItem from "../ledItem";
 import { LedColors } from "@/app/util/leds";
 
-const TexturePicker = () => {
+export default function TexturePicker() {
   const [showMenu, setShowMenu] = useState(true);
 
   const TexturePickerWrapperClass = clsx({
@@ -45,5 +47,3 @@ const TexturePicker = () => {
     </div>
   );
 };
-
-export default TexturePicker;

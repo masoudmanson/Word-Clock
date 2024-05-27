@@ -1,14 +1,14 @@
 "use client";
 
 import { CornerLed } from "./styles"
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import clsx from "clsx";
 import ClockWrapper from "../clockWrapper";
 import { clockLayout } from "@/app/util/clockLayout";
 import { Textures } from "@/app/util/textures";
 import { useSearchParams } from "next/navigation";
 
-const Clock = () => {
+export default function Clock() {
   const searchParams = useSearchParams();
   const texture = searchParams.get("texture") || Textures[11].value;
   const ledColor = searchParams.get("led") || "white";
@@ -175,7 +175,7 @@ const Clock = () => {
                     "md:text-3xl sm:text-xl font-word-clock z-10": true,
                     "text-yellow-100 text-shadow-clock-on-yellow": highlight && ledColor === "yellow",
                     "text-white text-shadow-clock-on-white": highlight && ledColor === "white",
-                    "text-black/50 text-shadow-clock-off": !highlight
+                    "text-black/30 text-shadow-clock-off": !highlight
                   })}`}>
                     {char}
                   </span>
@@ -194,5 +194,3 @@ const Clock = () => {
     </div>
   );
 };
-
-export default Clock;

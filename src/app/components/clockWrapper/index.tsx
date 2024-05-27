@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import clsx from "clsx";
@@ -6,14 +8,11 @@ type Props = {
   img: string;
   children?: JSX.Element[] | JSX.Element;
   className?: string;
-  style?: React.CSSProperties;
-  isDarkened?: boolean;
 };
 
 export default function ClockWrapper({
   img,
   children,
-  style,
 }: Props) {
   const [loaded, setLoaded] = useState(false);
 
@@ -27,11 +26,6 @@ export default function ClockWrapper({
 
   return (
     <div
-      style={{
-        filter: loaded ? "none" : "blur(3px)",
-        transition: "filter 1s",
-        ...style,
-      }}
       className={clsx({
         "grid grid-cols-11 justify-items-center items-center md:gap-x-4 gap-x-3 md:gap-y-1 gap-y-0 bg-cover md:p-20 sm:p-12 p-10 shadow-clock bg-zinc-800": true,
         "animate-pulse relative z-20": !loaded,
