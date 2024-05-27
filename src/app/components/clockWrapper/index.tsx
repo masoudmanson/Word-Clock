@@ -33,7 +33,7 @@ export default function ClockWrapper({
       })}
     >
       <Image src={img} alt={img} width={1000} height={1000} loading="eager" onLoad={handleLoad}
-        className="w-full h-full absolute top-0 left-0"
+        className="w-full h-full absolute top-0 left-0 brightness-75"
       />
       {children}
     </div>
