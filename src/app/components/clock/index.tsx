@@ -1,13 +1,20 @@
 "use client";
 
-import { ClockContext } from "@/app/context";
 import { CornerLed } from "./styles"
 import { useCallback, useContext, useEffect, useState } from "react";
 import clsx from "clsx";
 import ClockWrapper from "../clockWrapper";
 import { clockLayout } from "@/app/util/clockLayout";
+import { Textures } from "@/app/util/textures";
+import { useSearchParams } from "next/navigation";
 
 const Clock = () => {
+  const searchParams = useSearchParams();
+  const texture = searchParams.get("texture") || Textures[11].value;
+  const ledColor = searchParams.get("led") || "white";
+
+  const img = Textures.find((t) => t.value === texture)?.texture || Textures[11].texture;
+
   const [clockText, setClockText] = useState<(string | boolean)[][][]>(clockLayout.map((row) =>
     row.split("").map((char) => [char, false])
   ));
@@ -155,11 +162,9 @@ const Clock = () => {
     };
   }, [updateClock]);
 
-  const { texture, ledColor } = useContext(ClockContext);
-
   return (
     <div className="relative m-auto">
-      <ClockWrapper img={texture}>
+      <ClockWrapper img={img}>
         <>
           {
             clockText?.map(row => {
