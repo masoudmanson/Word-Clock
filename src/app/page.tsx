@@ -1,21 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense } from "react";
 import Clock from "./components/clock";
 import TexturePicker from "./components/texturePicker";
-import { ClockContext } from "./context";
+import TexturePickerSkeleton from "./skeletons/texturePickerSkeleton";
+import ClockSkeleton from "./skeletons/clockSkeleton";
 
 export default function Home() {
-  const [texture, setTexture] = useState("/bg/rust-1.jpg");
-  const [ledColor, setLedColor] = useState("white");
-  const [showMenu, setShowMenu] = useState(true);
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-6">
-      <ClockContext.Provider value={{ texture, setTexture, ledColor, setLedColor, showMenu, setShowMenu }}>
+      <Suspense fallback={<ClockSkeleton />}>
         <Clock />
+      </Suspense>
+      <Suspense fallback={<TexturePickerSkeleton />}>
         <TexturePicker />
-      </ClockContext.Provider>
+      </Suspense>
     </main>
   );
 }
